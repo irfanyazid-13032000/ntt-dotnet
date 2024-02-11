@@ -1,0 +1,14 @@
+/home/user/BATCH14/dotnet/ntt/bin/Debug/net8.0/ntt
+/home/user/BATCH14/dotnet/ntt/bin/Debug/net8.0/ntt.deps.json
+/home/user/BATCH14/dotnet/ntt/bin/Debug/net8.0/ntt.runtimeconfig.json
+/home/user/BATCH14/dotnet/ntt/bin/Debug/net8.0/ntt.dll
+/home/user/BATCH14/dotnet/ntt/bin/Debug/net8.0/ntt.pdb
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.AssemblyInfoInputs.cache
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.AssemblyInfo.cs
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.csproj.CoreCompileInputs.cache
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.dll
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/refint/ntt.dll
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.pdb
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.genruntimeconfig.cache
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ref/ntt.dll

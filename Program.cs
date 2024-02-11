@@ -105,6 +105,20 @@ class Program
                       break;
 
 
+                case "slot_numbers_for_vehicles_with_colour":
+                        if (parkingLot == null)
+                        {
+                            Console.WriteLine("Please create a parking lot first.");
+                        }
+                        else
+                        {
+                            var color = parts[1];
+                            var slotNumbers = parkingLot.GetSlotNumbersByColor(color);
+                            Console.WriteLine(string.Join(", ", slotNumbers));
+                        }
+                        break;
+
+
                 default:
                     Console.WriteLine("Invalid command");
                     break;

@@ -116,6 +116,7 @@ public class ParkingLot
             .ToList();
     }
 
+
     public int GetSlotNumberByRegistrationNumber(string registrationNumber)
     {
         var vehicle = parkingSlots.FirstOrDefault(slot => slot.Value.RegistrationNumber.Equals(registrationNumber, StringComparison.OrdinalIgnoreCase)).Value;

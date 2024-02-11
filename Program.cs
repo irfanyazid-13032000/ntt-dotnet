@@ -118,6 +118,19 @@ class Program
                         }
                         break;
 
+                case "slot_number_for_registration_number":
+                          if (parkingLot == null)
+                          {
+                              Console.WriteLine("Please create a parking lot first.");
+                          }
+                          else
+                          {
+                              var registrationNumber = parts[1];
+                              var slotNumber = parkingLot.GetSlotNumberByRegistrationNumber(registrationNumber);
+                              Console.WriteLine(slotNumber);
+                          }
+                          break;
+
 
                 default:
                     Console.WriteLine("Invalid command");

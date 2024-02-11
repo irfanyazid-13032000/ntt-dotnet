@@ -22,7 +22,7 @@ public class ParkingLot
         }
 
         int slotNumber = GetNextAvailableSlot();
-        parkingSlots[slotNumber] = new Vehicle(registrationNumber, color, vehicleType);
+        parkingSlots[slotNumber] = new Vehicle(registrationNumber, vehicleType, color);
         Console.WriteLine($"Allocated slot number: {slotNumber}");
     }
 
@@ -48,52 +48,58 @@ public class ParkingLot
     }
 
     public int CountVehiclesByType(string vehicleType)
-      {
-          return parkingSlots.Count(slot => slot.Value.VehicleType.Equals(vehicleType, StringComparison.OrdinalIgnoreCase));
-      }
-
-private bool IsOddPlate(string registrationNumber)
-{
-    // Ambil karakter tengah dari nomor registrasi
-    int middleIndex = registrationNumber.Length / 2;
-    char middleCharacter = registrationNumber[middleIndex];
-
-    // Periksa apakah karakter tengah adalah angka
-    if (char.IsDigit(middleCharacter))
     {
-        // Parse karakter tengah sebagai integer
-        int middleDigit = int.Parse(middleCharacter.ToString());
-
-        // Periksa apakah digit yang di-parse adalah angka ganjil
-        return middleDigit % 2 != 0;
+        return parkingSlots.Count(slot => slot.Value.VehicleType.Equals(vehicleType, StringComparison.OrdinalIgnoreCase));
     }
 
-    // Jika karakter tengah bukan angka, handle sesuai kebutuhan
-    return false;
-}
+    private bool IsOddPlate(string registrationNumber)
+    {
+        // Ambil karakter tengah dari nomor registrasi
+        int middleIndex = registrationNumber.Length / 2;
+        char middleCharacter = registrationNumber[middleIndex];
 
-public List<string> GetRegistrationNumbersForOddPlate()
-{
-    List<string> oddPlateRegistrationNumbers = parkingSlots.Values
-        .Where(vehicle =>
+        // Periksa apakah karakter tengah adalah angka
+        if (char.IsDigit(middleCharacter))
         {
-            bool isOdd = IsOddPlate(vehicle.RegistrationNumber);
-            return isOdd;
-        })
-        .Select(vehicle => vehicle.RegistrationNumber)
-        .ToList();
+            // Parse karakter tengah sebagai integer
+            int middleDigit = int.Parse(middleCharacter.ToString());
 
-    
-    return oddPlateRegistrationNumbers.Distinct().ToList();
-}
+            // Periksa apakah digit yang di-parse adalah angka ganjil
+            return middleDigit % 2 != 0;
+        }
 
+        // Jika karakter tengah bukan angka, handle sesuai kebutuhan
+        return false;
+    }
 
+    public List<string> GetRegistrationNumbersForOddPlate()
+    {
+        List<string> oddPlateRegistrationNumbers = parkingSlots.Values
+            .Where(vehicle =>
+            {
+                bool isOdd = IsOddPlate(vehicle.RegistrationNumber);
+                return isOdd;
+            })
+            .Select(vehicle => vehicle.RegistrationNumber)
+            .ToList();
 
+        return oddPlateRegistrationNumbers.Distinct().ToList();
+    }
 
+    public List<string> GetRegistrationNumbersForEvenPlate()
+    {
+        List<string> evenPlateRegistrationNumbers = parkingSlots.Values
+            .Where(vehicle =>
+            {
+                bool isOdd = IsOddPlate(vehicle.RegistrationNumber);
+                bool isEven = !isOdd;
+                return isEven;
+            })
+            .Select(vehicle => vehicle.RegistrationNumber)
+            .ToList();
 
-
-
-    
+        return evenPlateRegistrationNumbers.Distinct().ToList();
+    }
 
     public List<string> GetRegistrationNumbersByColor(string color)
     {
@@ -148,7 +154,7 @@ public class Vehicle
     public string Color { get; }
     public string VehicleType { get; }
 
-    public Vehicle(string registrationNumber,string vehicleType,string color)
+    public Vehicle(string registrationNumber, string vehicleType, string color)
     {
         RegistrationNumber = registrationNumber;
         Color = color;

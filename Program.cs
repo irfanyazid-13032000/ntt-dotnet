@@ -1,5 +1,6 @@
-﻿
-public class Program
+﻿using System;
+
+class Program
 {
     static void Main(string[] args)
     {
@@ -51,42 +52,53 @@ public class Program
                     }
                     break;
 
-               case "type_of_vehicles":
+                case "type_of_vehicles":
                     if (parkingLot == null)
                     {
                         Console.WriteLine("Please create a parking lot first.");
                     }
                     else
                     {
-                        string typeOrColor = parts[1];
-
-                        int count = parkingLot.CountVehiclesByType(typeOrColor);
-
+                        int count = parkingLot.CountVehiclesByType(parts[1]);
                         Console.WriteLine(count);
                     }
                     break;
 
+                case "registration_numbers_for_vehicles_with_odd_plate":
+                    if (parkingLot == null)
+                    {
+                        Console.WriteLine("Please create a parking lot first.");
+                    }
+                    else
+                    {
+                        var oddPlateNumbers = parkingLot.GetRegistrationNumbersForOddPlate();
+                        Console.WriteLine(string.Join(", ", oddPlateNumbers));
+                    }
+                    break;
 
-                case "registration_numbers_for_vehicles_with_ood_plate":
-                      if (parkingLot == null)
-                      {
-                          Console.WriteLine("Please create a parking lot first.");
-                      }
-                      else
-                      {
-                          List<string> oddPlateRegistrationNumbers = parkingLot.GetRegistrationNumbersForOddPlate();
-                          string result = string.Join(", ", oddPlateRegistrationNumbers);
-                          Console.WriteLine(result);
-                      }
-                      break;
+                case "registration_numbers_for_vehicles_with_even_plate":
+                    if (parkingLot == null)
+                    {
+                        Console.WriteLine("Please create a parking lot first.");
+                    }
+                    else
+                    {
+                        var evenPlateNumbers = parkingLot.GetRegistrationNumbersForEvenPlate();
+                        Console.WriteLine(string.Join(", ", evenPlateNumbers));
+                    }
+                    break;
 
-
-
-                // ... other cases for different commands ...
-
-                case "exit":
-                    Console.WriteLine("Exiting the program.");
-                    return;
+                case "registration_numbers_for_vehicles_with_event_plate":
+                    if (parkingLot == null)
+                    {
+                        Console.WriteLine("Please create a parking lot first.");
+                    }
+                    else
+                    {
+                        var evenPlateNumbers = parkingLot.GetRegistrationNumbersForEvenPlate();
+                        Console.WriteLine(string.Join(", ", evenPlateNumbers));
+                    }
+                    break;
 
                 default:
                     Console.WriteLine("Invalid command");

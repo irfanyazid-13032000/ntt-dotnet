@@ -12,3 +12,4 @@
 /home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.pdb
 /home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.genruntimeconfig.cache
 /home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ref/ntt.dll
+/home/user/BATCH14/dotnet/ntt/obj/Debug/net8.0/ntt.sourcelink.json

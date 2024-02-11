@@ -130,6 +130,8 @@ public class ParkingLot
             .ToList();
     }
 
+  
+
     private int GetNextAvailableSlot()
     {
         for (int i = 1; i <= capacity; i++)
@@ -154,7 +156,7 @@ public class Vehicle
     public string Color { get; }
     public string VehicleType { get; }
 
-    public Vehicle(string registrationNumber, string vehicleType, string color)
+    public Vehicle(string registrationNumber, string color,string vehicleType)
     {
         RegistrationNumber = registrationNumber;
         Color = color;

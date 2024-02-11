@@ -88,17 +88,22 @@ class Program
                     }
                     break;
 
-                case "registration_numbers_for_vehicles_with_event_plate":
-                    if (parkingLot == null)
-                    {
-                        Console.WriteLine("Please create a parking lot first.");
-                    }
-                    else
-                    {
-                        var evenPlateNumbers = parkingLot.GetRegistrationNumbersForEvenPlate();
-                        Console.WriteLine(string.Join(", ", evenPlateNumbers));
-                    }
-                    break;
+
+            
+
+                case "registration_numbers_for_vehicles_with_colour":
+                      if (parkingLot == null)
+                      {
+                          Console.WriteLine("Please create a parking lot first.");
+                      }
+                      else
+                      {
+                          var color = parts[1];
+                          var registrationNumbers = parkingLot.GetRegistrationNumbersByColor(color);
+                          Console.WriteLine(string.Join(", ", registrationNumbers));
+                      }
+                      break;
+
 
                 default:
                     Console.WriteLine("Invalid command");
